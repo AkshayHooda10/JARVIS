@@ -6,6 +6,7 @@ import wikipedia
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
+engine.setProperty('rate', 150)
 # print(voices[1].id)
 engine.setProperty('voice', voices[0].id)
 
@@ -15,10 +16,19 @@ def speak(audio):
 
 def wishme():
     hour = int(datetime.datetime.now().hour)
+    if 0 <= hour < 12:
+        speak("Good Morning!")
+    elif 12 <= hour < 18:
+        speak("Good Afternoon!")
+    else:
+        speak("Good Evening!")
+
+    speak("Jarvis here to help!")
+
 
 def takeCommand():
     r = sr.Recognizer()
-    with sr.Microphone as source:
+    with sr.Microphone() as source:
         print('Listening...')
         r.pause_threshold = 1
         audio = r.listen(source)
@@ -32,7 +42,8 @@ def takeCommand():
         return "None"
     return query
 
-if __name__ == "__main__":
+if __name__ == "__main__":   
+    
     wishme()
     while True:
         query = takeCommand().lower()
