@@ -50,7 +50,6 @@ def sendemail(to, content):
      server.login('akshay21csu312@ncuindia.edu', 'Sasori@1029')
      server.sendmail('akshay21csu312@ncuindia.edu' , to, content)
      server.close()
-
 if __name__ == "__main__":   
     
     wishme()
@@ -95,6 +94,8 @@ if __name__ == "__main__":
             speak("According to Wikipedia")
             print(results)
             speak(results)
+        if 'garvit' in query:
+             speak('Please dont mention that shithead whore i can not stand that asshole hehe')
         elif 'email to akshay' in query:
             try:
                   speak("What should the email say?")
