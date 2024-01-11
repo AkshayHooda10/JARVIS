@@ -3,6 +3,7 @@ import speech_recognition as sr
 import datetime
 import webbrowser
 import wikipedia
+import smtplib
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -23,7 +24,7 @@ def wishme():
     else:
         speak("Good Evening!")
 
-    speak("Jarvis here to help!")
+    speak("Hello Sir! Jarvis here to help!")
 
 
 def takeCommand():
@@ -41,6 +42,14 @@ def takeCommand():
         print("Say that again please..")
         return "None"
     return query
+
+def sendemail(to, content):
+     server = smtplib.SMTP('smtp.gmail.com', 587)
+     server.ehlo()
+     server.starttls()
+     server.login('akshay21csu312@ncuindia.edu', 'Sasori@1029')
+     server.sendmail('akshay21csu312@ncuindia.edu' , to, content)
+     server.close()
 
 if __name__ == "__main__":   
     
@@ -86,8 +95,20 @@ if __name__ == "__main__":
             speak("According to Wikipedia")
             print(results)
             speak(results)
+        elif 'email to akshay' in query:
+            try:
+                  speak("What should the email say?")
+                  content = takeCommand()
+                  to = "hoodaakshay@gmail.com"
+                  sendemail(to, content)
+                  speak("Email has been sent!")
+            except Exception as e:
+                   print(e)
+                   speak("Sorry sir , I am not able to send the email at the moment!") 
         if "Thank You".lower() in query.lower():
-                speak("Do tell me if help needed! ByeBye")
+                speak("You're welcome!ByeBye")
                 exit()
+        
+
 
     
