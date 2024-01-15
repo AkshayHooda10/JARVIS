@@ -117,7 +117,9 @@ if __name__ == "__main__":
         if "Download settings".lower() in query.lower():
              download_settings()
         if "Virtual Mouse".lower() in query.lower():
-             v_mouse()
+             v_mouse() #Fix forever loop for the program!
+
+        # To be added - GUI + Smooth V mouse movement! 
 
 
     
