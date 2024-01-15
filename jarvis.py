@@ -4,6 +4,7 @@ import datetime
 import webbrowser
 import wikipedia
 import smtplib
+from subprocess import call 
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -11,6 +12,10 @@ engine.setProperty('rate', 150)
 # print(voices[1].id)
 engine.setProperty('voice', voices[0].id)
 
+def v_mouse():
+     call(['python', 'hand tracker.py'])
+def download_settings():
+     call(['python' , 'FileAutomator.py'])     
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
@@ -95,7 +100,7 @@ if __name__ == "__main__":
             print(results)
             speak(results)
         if 'garvit' in query:
-             speak('Please dont mention that shithead whore i can not stand that asshole hehe')
+             speak('Please dont mention that shithead whore i can not stand that asshole')
         elif 'email to akshay' in query:
             try:
                   speak("What should the email say?")
@@ -109,7 +114,10 @@ if __name__ == "__main__":
         if "Thank You".lower() in query.lower():
                 speak("You're welcome!ByeBye")
                 exit()
-        
+        if "Download settings".lower() in query.lower():
+             download_settings()
+        if "Virtual Mouse".lower() in query.lower():
+             v_mouse()
 
 
     
