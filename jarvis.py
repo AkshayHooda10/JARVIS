@@ -13,7 +13,7 @@ engine.setProperty('rate', 150)
 engine.setProperty('voice', voices[0].id)
 
 def v_mouse():
-     call(['python', 'hand tracker.py'])
+     call(['python', 'cater.py'])
 def download_settings():
      call(['python' , 'FileAutomator.py'])     
 def speak(audio):
@@ -116,10 +116,9 @@ if __name__ == "__main__":
                 exit()
         if "Download settings".lower() in query.lower():
              download_settings()
-        if "Virtual Mouse".lower() in query.lower():
-             v_mouse() #Fix forever loop for the program!
-
-        # To be added - GUI + Smooth V mouse movement! 
-
+        if "deploy cater".lower() in query.lower():
+             v_mouse()
+             if "exit cater".lower() in query.lower():
+                  exit() #Fix forever loop for the program!
 
     
