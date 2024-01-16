@@ -5,6 +5,7 @@ import webbrowser
 import wikipedia
 import smtplib
 from subprocess import call 
+import time
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -116,9 +117,13 @@ if __name__ == "__main__":
                 exit()
         if "Download settings".lower() in query.lower():
              download_settings()
-        if "deploy cater".lower() in query.lower():
-             v_mouse()
-             if "exit cater".lower() in query.lower():
-                  exit() #Fix forever loop for the program!
-
+        if "i am feeling lazy".lower() in query.lower():
+            duration = 60
+            speak("Got it sir! Initializing CATER")
+            start_time = time.time()
+            while time.time()- start_time <= duration:
+                v_mouse()
+            takeCommand()
+            print(query)    
+            
     
