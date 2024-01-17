@@ -118,12 +118,8 @@ if __name__ == "__main__":
         if "Download settings".lower() in query.lower():
              download_settings()
         if "i am feeling lazy".lower() in query.lower():
-            duration = 60
-            speak("Got it sir! Initializing CATER")
-            start_time = time.time()
-            while time.time()- start_time <= duration:
-                v_mouse()
-            takeCommand()
-            print(query)    
+            v_mouse()
+            speak("Got it sir. Initializing CATER")
             
+        
     
