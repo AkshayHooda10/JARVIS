@@ -5,7 +5,6 @@ import webbrowser
 import wikipedia
 import smtplib
 from subprocess import call 
-import time
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -118,8 +117,9 @@ if __name__ == "__main__":
         if "Download settings".lower() in query.lower():
              download_settings()
         if "i am feeling lazy".lower() in query.lower():
-            v_mouse()
             speak("Got it sir. Initializing CATER")
+            v_mouse()
+            
             
         
     
