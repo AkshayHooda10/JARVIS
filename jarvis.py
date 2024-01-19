@@ -4,7 +4,12 @@ import datetime
 import webbrowser
 import wikipedia
 import smtplib
+import time
 from subprocess import call 
+
+start_time = time.time()
+duration = 40
+
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -13,7 +18,7 @@ engine.setProperty('rate', 150)
 engine.setProperty('voice', voices[0].id)
 
 def v_mouse():
-     call(['python', 'cater.py'])
+     call(['python', 'hand tracker.py'])
 def download_settings():
      call(['python' , 'FileAutomator.py'])     
 def speak(audio):
@@ -91,7 +96,7 @@ if __name__ == "__main__":
                 musicPath = "C:\\Users\\hooda\\Downloads\\Rockstarmade"
 
                 webbrowser.open("https://www.youtube.com/watch?v=EwdsnGfrd-k")
-                speak("SIKE YOU REALLY THOUGHT?")
+                speak("Hey look at me move i've finally understood Sarcasm.")
         if 'wikipedia' in query :
             speak('Searching Wikipedia..')
             query = query.replace("Wikipedia", " ")
