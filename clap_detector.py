@@ -22,4 +22,8 @@ if __name__ == "__main__":
         if clap == True:
             break
         else:
+<<<<<<< HEAD
             pass
+=======
+            pass
+>>>>>>> b40122e251ef1920da767f395d5f3bd1a5cbe75f
