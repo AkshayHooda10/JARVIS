@@ -8,8 +8,8 @@ import time
 from subprocess import call 
 
 start_time = time.time()
-duration = 40
-
+from clapdetect import MainClapExe
+MainClapExe()
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -121,8 +121,9 @@ if __name__ == "__main__":
                 exit()
         if "Download settings".lower() in query.lower():
              download_settings()
-        if "i am feeling lazy".lower() in query.lower():
+        if "recognize my hand movement".lower() in query.lower():
             speak("Got it sir. Initializing CATER")
+            max_duration = input(speak("How long do you want to run it?"))
             v_mouse()
             
             
