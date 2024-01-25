@@ -15,8 +15,7 @@ def detect_clap(indata , frames , time , status):
 def listen_for_clap():
     with sd.InputStream(callback=detect_clap):
         return sd.sleep(1000)
-
-if __name__ == "__main__":
+def MainClapExe():
     while True:
         listen_for_clap()
         if clap == True:
