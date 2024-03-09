@@ -24,7 +24,8 @@ def download_settings():
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
-
+def file_collector():
+     call(['python','upload_button.py'])
 def wishme():
     hour = int(datetime.datetime.now().hour)
     if 0 <= hour < 12:
@@ -125,6 +126,8 @@ if __name__ == "__main__":
             speak("Got it sir. Initializing CATER")
             max_duration = input(speak("How long do you want to run it?"))
             v_mouse()
+        if "upload file".lower() in query.lower():
+             file_collector()
             
             
         
