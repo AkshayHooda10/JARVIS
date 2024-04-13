@@ -105,9 +105,7 @@ if __name__ == "__main__":
             speak("According to Wikipedia")
             print(results)
             speak(results)
-        if 'garvit' in query:
-             speak('Please dont mention that shithead whore i can not stand that asshole')
-        elif 'email to akshay' in query:
+                elif 'email to akshay' in query:
             try:
                   speak("What should the email say?")
                   content = takeCommand()
