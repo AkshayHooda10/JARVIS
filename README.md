@@ -1,4 +1,4 @@
-JARVIS - Just A Rather Very Intelligent System
+**JARVIS - Just A Rather Very Intelligent System**
 JARVIS is a voice assistant project inspired by the iconic AI from the Iron Man universe. It's designed to respond to voice commands and clap detection, allowing seamless interaction with your computer. While currently not running on any language model, future versions will integrate Azure OpenAI for enhanced functionality, and Eleven Labs will be used to provide more realistic speech capabilities.
 
 Features
